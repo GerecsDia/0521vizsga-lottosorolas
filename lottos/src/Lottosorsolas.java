@@ -16,25 +16,24 @@ public class Lottosorsolas {
 
         Connection connection = null;
         try {
-            // Load MariaDB JDBC Driver
             Class.forName("org.mariadb.jdbc.Driver");
 
             connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lottosorsolas", "root", "");
 
-            // Import Gamers
+            
             List<String> gamers = readCSV(gamersFile);
             int gamersImported = importGamers(connection, gamers);
             System.out.println("Successfully imported " + gamersImported + " gamers.");
 
-            // Import Data
+            
             List<String[]> data = readCSVWithHeaders(dataFile);
             int dataImported = importData(connection, data);
             System.out.println("Successfully imported " + dataImported + " data rows.");
 
-            // Query and display Gamers
+            
             displayGamers(connection);
 
-            // Query and display Data
+            
             displayData(connection);
 
         } catch (ClassNotFoundException e) {
