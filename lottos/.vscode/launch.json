@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        },
+
+
+        {
+            "type": "java",
+            "name": "Launch Lottosorsolas",
+            "request": "launch",
+            "mainClass": "Lottosorsolas",
+            "args": ["gamers.csv", "data5.csv"],
+            "env": {
+                "MY_VARIABLE": "my_value"
+            },
+            "console": "integratedTerminal",
+            "vmArgs": "-cp bin;lib/mariadb-java-client-3.3.2.jar"
+        }
+    ]
+}
+
